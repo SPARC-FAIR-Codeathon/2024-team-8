@@ -1,6 +1,6 @@
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/sparc_rl_logo.png?raw=true" style="display: block; width: 30%;"/>
 
-## Data-Driven Reinforcement Learning for Medical Device Control Made Easy
+# Reinforcement Learning for Medical Device Control Made Easy
 SPARC.RL is a first proof-of-concept toolchain designed to enable researchers, even those without specific domain knowledge in reinforcement learning, to effortlessly train sophisticated, state-of-the-art reinforcement learning (RL) agents for robust medical device control, e.g. for closed-loop neuromodulation. It levarges the power of [Stable Baselines 3](https://stable-baselines3.readthedocs.io/), one of the most prominent and powerful reinforcement learning frameworks available. SPARC.RL allows users to integrate and utilize data from the [SPARC](https://sparc.science/) platform and models from [oSPARC](https://osparc.io/) seamlessly into a reinforcement learning pipeline. 
 
 This toolchain was developed during the [2024 SPARC FAIR Codeathon](https://sparc.science/news-and-events/events/2024-sparc-fair-codeathon) by Max Haberbusch and John Bentley.
@@ -8,7 +8,7 @@ This toolchain was developed during the [2024 SPARC FAIR Codeathon](https://spar
 <i>Note: While this toolchain offers powerful capabilities, please note that it is an initial prototype serving as a proof of concept, and no guarantees are made regarding its bug-freeness and operability with other datasets than those used during development.</i>
 
 
-### Key Features:
+## Key Features:
 The SPARC.RL toolchain consists of a standalone client that is used to obtain appropriate datasets for reinforcement learning from the [SPARC](https://sparc.science/) platform. This also involves using a large language model to present suggestions to the user on how to use the selected dataset in reinforcement learning. The standalone client helps to preprocess the data, design a proper neural network architecturem and train the model. The result is trained model that is saved to the hard disk. The second component is a [oSPARC](https://osparc.io/) application enables the use of the [Stable Baselines 3](https://stable-baselines3.readthedocs.io/) framework harnessing the computational power of oSPARC. Here the user can load the pre-trained surrogate model and parameterize the reinforcement learning policy and training.<br/><br/>
 
 <p align="center">
@@ -16,21 +16,45 @@ The SPARC.RL toolchain consists of a standalone client that is used to obtain ap
   <b>Figure 1.</b> Overview of the SPARC.RL toolchain.
 </p>
 
-#### Dataset and Model Integration:
+### Dataset and Model Integration:
 
 SPARC.RL supports the selection and use of time-series datasets directly loaded from the SPARC platform using the [SPARC Python client](https://docs.sparc.science/docs/sparc-python-client).
 Users can also work with selected [oSPARC](https://osparc.io/) models, enabling the training of RL agents in a highly flexible and customizable manner.
 
-##### Customizable Inputs and Outputs:
+#### Customizable Inputs and Outputs:
 Users can choose from available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs.
 That allows the selection of appropriate actions and observables that the RL agent should focus on.
 
-#### Data-driven Modelling:
+### Data-driven Modelling:
 
 SPARC.RL offers multiple deep learning architectures to create surrogate models of experimental data available on [SPARC](https://sparc.science/) or [oSPARC](https://osparc.io) models.
 Users can select from various RNNs optimized for time-series modeling, including vanilla recurrent neural networks (RNNs), long short-term memory (LSTM) networks, bi-directional LSTM (BiLSTM) networks, and gated recurrent units (GRUs), providing flexibility in how the models are trained. Users can configure their network and training parameters according to their needs. The adjustable parameters include the number of layers, number of units per layer, optimizer, learning rate, batch size, number of epochs, and early stopping policies.
 
-#### Steps to Generate the Surrogate Model
+### Steps to Generate the Surrogate Model
+
+#### Installation 
+
+##### Clone the Repository
+```
+git clone https://github.com/SPARC-FAIR-Codeathon/2024-team-8.git
+cd 2024-team-8
+```
+
+##### Create and Activate a Conda Environment:
+If you don't have Conda installed, you can install Miniconda or Anaconda as they come with Conda included.
+
+Create and activate the environment using the provided `environment.yml` file:
+```
+conda env create -f environment.yml
+conda activate sparcrl
+```
+
+##### Run the Surrogate Modeling Tool: 
+Now you are all set to run the surrogate modeling tool. To do so run the following command on your command line.
+```
+python surrogate_modeling_tool.py
+```
+
 In the first step, select a dataset from the dropdown menu which is automatically populated with available datasets on the SPARC platform. Currently, the datasets are limited to time series data. Once you have selected a model you can inspect the model metadata like model description, creator, creation date, version, etc. Additionally, a large language model is used to generate suggestions on how to use the dataset for reinforcement learning. Once you have chosen your dataset, you can download and extract the data from SPARC by hitting the 'Get Dataset!' button. You will be asked in what folder to save the data. After that, you can proceed to the next step, to select the file(s) to use for training the surrogate model by hitting the 'Next' button.<br/><br/>
 <p align="center">
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sprac_rl_select_dataset_from_sparc.png?raw=true" alt="Select dataset from SPARC platform" width="500"/><br/>
@@ -61,7 +85,7 @@ After the training is completed, you can access the training data (.csv files) a
         <b>Figure 6.</b> Training data and trained model saved to hard disk.
 </p>
 
-#### Reinforcement Learning on oSPARC:
+### Reinforcement Learning on oSPARC:
 
 After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies.
 The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
