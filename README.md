@@ -40,7 +40,7 @@ After loading the data for training, you can define your model architecture. For
 <br/><br/>
 <p align="center">
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_train_model_2.png?raw=true" alt="Define model architecture and start the training of the surrogate model." height="500"/><br/>
-      <b>Figure 3.</b> Define model architecture and set training parameters.
+      <b>Figure 4.</b> Define model architecture and set training parameters.
 </p><br/>
 Now you can sit back and watch Tensorflow doing its magic to train your surrogate model. The trained surrogate model is saved along with the training data into the `training_data` directory in your project folder.
 <br/><br/>
