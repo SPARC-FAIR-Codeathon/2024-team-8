@@ -16,7 +16,7 @@ Users can also work with selected [oSPARC](https://osparc.io/) models, enabling 
 
 ##### Customizable Inputs and Outputs:
 Users can choose from available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs.
-The tool allows precise control over the parameters, including selecting the appropriate actions and observables that the RL agent should focus on.
+That allows the selection of appropriate actions and observables that the RL agent should focus on.
 
 #### Data-driven Modelling:
 
