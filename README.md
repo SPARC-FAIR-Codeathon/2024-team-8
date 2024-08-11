@@ -1,7 +1,12 @@
-<img src="https://raw.githubusercontent.com/SPARC-FAIR-Codeathon/2024-team-8/main/spracrl_logo.png?token=GHSAT0AAAAAACU3WWCVM3JE7IIVJW3VHGNGZVY6KGQ" style="display: block; width: 30%;"/>
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/sparc_rl_logo.png?raw=true" style="display: block; width: 30%;"/>
 
 ## Data-Driven Reinforcement Learning for Medical Device Control Made Easy
-SPARC.RL is a first proof-of-concept tool, developed during the [2024 SPARC FAIR Codeathon](https://sparc.science/news-and-events/events/2024-sparc-fair-codeathon), designed to enable researchers, even those without specific domain knowledge in reinforcement learning, to effortlessly train sophisticated, state-of-the-art reinforcement learning (RL) agents for medical device control (e.g. closed-loop neuromodulation) levarging the power of [Stable Baselines 3](https://stable-baselines3.readthedocs.io/). SPARC.RL allows users to integrate and utilize data and models from the [SPARC](https://sparc.science/) platform seamlessly. While this tool offers powerful capabilities, please note that it is an initial prototype, and no guarantees are made regarding its bug-freeness.
+SPARC.RL is a first proof-of-concept toolchain designed to enable researchers, even those without specific domain knowledge in reinforcement learning, to effortlessly train sophisticated, state-of-the-art reinforcement learning (RL) agents for robust medical device control, e.g. for closed-loop neuromodulation. It levarges the power of [Stable Baselines 3](https://stable-baselines3.readthedocs.io/), one of the most prominent and powerful reinforcement learning frameworks available. SPARC.RL allows users to integrate and utilize data from the [SPARC](https://sparc.science/) platform and models from [oSPARC](https://osparc.io/) seamlessly into a reinforcement learning pipeline. 
+
+This toolchain was developed during the [2024 SPARC FAIR Codeathon](https://sparc.science/news-and-events/events/2024-sparc-fair-codeathon) by Max Haberbusch and John Bentley.
+
+<i>Note: While this toolchain offers powerful capabilities, please note that it is an initial prototype serving as a proof of concept, and no guarantees are made regarding its bug-freeness.</i>
+
 
 ### Key Features:
 #### Dataset and Model Integration:
