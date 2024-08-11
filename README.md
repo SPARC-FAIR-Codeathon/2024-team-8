@@ -55,6 +55,11 @@ Now you can sit back and watch Tensorflow doing its magic to train your surrogat
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/training_progress.png?raw=true" alt="Training of the model" width="800"/><br/>
         <b>Figure 5.</b> Observe training progress.
 </p>
+After the training is completed, you can access the training data (.csv files) and the trained model (.h5 file) that was saved to your hard disk from your project directory. 
+<p align="center">
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_data_saved_to_hd.png?raw=true" alt="Data saved to hard disk." width="500"/><br/>
+        <b>Figure 6.</b> Training data and trained model saved to hard disk.
+</p>
 
 #### Reinforcement Learning on oSPARC:
 
