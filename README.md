@@ -25,9 +25,9 @@ Users can select from various RNNs optimized for time-series modeling, including
 
 #### Steps to Generate the Surrogate Model
 In the first step, select a dataset from the dropdown menu which is automatically populated with available datasets on the SPARC platform. Currently, the datasets are limited to time series data. Once you have selected a model you can inspect the model metadata like model description, creator, creation date, version, etc. Additionally, a large language model is used to generate suggestions on how to use the dataset for reinforcement learning. Once you have chosen your dataset, you can download and extract the data from SPARC by hitting the 'Get Dataset!' button. You will be asked in what folder to save the data. After that, you can proceed to the next step, to select the file(s) to use for training the surrogate model by hitting the 'Next' button.
-![Select dataset from SPARC platform]([http://url/to/img.png](https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_load_data_from_sparc.png?raw=true))
-![Select data file from dataset and and preprocess]([http://url/to/img.png](https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_inspect_preprocessed_dataset.png?raw=true))
-![Define model architecture and trian surrogate model]([http://url/to/img.png](https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_train_model_2.png?raw=true))
+![Select dataset from SPARC platform](https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_load_data_from_sparc.png?raw=true)
+![Select data file from dataset and and preprocess](https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_load_data_from_sparc.png?raw=true)
+![Define model architecture and trian surrogate model](https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_load_data_from_sparc.png?raw=true)
 
 
 #### Reinforcement Learning:
