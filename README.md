@@ -37,7 +37,7 @@ Users can select from various RNNs optimized for time-series modeling, including
 ##### Clone the Repository
 ```
 git clone https://github.com/SPARC-FAIR-Codeathon/2024-team-8.git
-cd 2024-team-8
+cd 2024-team-8/surrogate_modeling_tool
 ```
 
 ##### Create and Activate a Conda Environment:
