@@ -13,15 +13,15 @@ This toolchain was developed during the [2024 SPARC FAIR Codeathon](https://spar
 
 SPARC.RL supports the selection and use of time-series datasets directly loaded from the SPARC platform using the [SPARC Python client](https://docs.sparc.science/docs/sparc-python-client).
 Users can also work with selected [oSPARC](https://osparc.io/) models, enabling the training of RL agents in a highly flexible and customizable manner.
-Customizable Inputs and Outputs:
 
+##### Customizable Inputs and Outputs:
 Users can choose from available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs.
 The tool allows precise control over the parameters, including selecting the appropriate actions and observables that the RL agent should focus on.
 
 #### Data-driven Modelling:
 
 SPARC.RL offers multiple deep learning architectures to create surrogate models of experimental data or oSPARC models.
-Users can select from various RNNs optimized for time-series modeling, including vanilla recurrent neural networks (RNNs), long short-term memory (LSTM) networks, bi-directional LSTM (BiLSTM) networks, and gated recurrent units (GRUs), providing flexibility in how the models are trained.
+Users can select from various RNNs optimized for time-series modeling, including vanilla recurrent neural networks (RNNs), long short-term memory (LSTM) networks, bi-directional LSTM (BiLSTM) networks, and gated recurrent units (GRUs), providing flexibility in how the models are trained. Users can configure their network and training parameters according to their needs. The adjustable parameters include the number of layers, number of units per layer, optimizer, learning rate, batch size, number of epochs, and early stopping policies.
 
 #### Reinforcement Learning Algorithm Configuration:
 
