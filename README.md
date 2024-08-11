@@ -19,11 +19,11 @@ The SPARC.RL toolchain consists of a standalone client that is used to obtain ap
 ### Dataset and Model Integration:
 
 SPARC.RL supports the selection and use of time-series datasets directly loaded from the SPARC platform using the [SPARC Python client](https://docs.sparc.science/docs/sparc-python-client).
-Users can also work with selected [oSPARC](https://osparc.io/) models, enabling the training of RL agents in a highly flexible and customizable manner.
+Users can also work with selected [oSPARC](https://osparc.io/) models, enabling the training of RL agents in a highly flexible and customizable manner.<br/><br/>
+<i>Note: During development of our toolchain during the SPARC Codeathon 2024, we used the dataset of Oliver Armitage et al. "Influence of vagus nerve stimulation on vagal and cardiac activity in freely moving pigs" available on sparc (doi: [10.26275/aw2z-a49z](https://doi.org/10.26275/aw2z-a49z)) </i>
 
 #### Customizable Inputs and Outputs:
-Users can choose from available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs.
-That allows the selection of appropriate actions and observables that the RL agent should focus on.
+While the ultimate goal was that users can choose from available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs, in the current version, this can only be done by modifying the code. Later versions should allow the user to pick appropriate actions and observables directly from the graphical user interface.
 
 ### Data-driven Modelling:
 
