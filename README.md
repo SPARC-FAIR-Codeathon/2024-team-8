@@ -33,10 +33,11 @@ In the first step, select a dataset from the dropdown menu which is automaticall
 </div>
 <br/>
 <div style="text-align: center;">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_train_model_2.png?raw=true" alt="Define model architecture and train surrogate model" height="500"/><br/>
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_train_model_2.png?raw=true" alt="Define model architecture and start to training of the surrogate model" height="500"/><br/>
 </div>
-
-
+<div style="text-align: center;">
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/training_progress.png?raw=true" alt="Training of the model" height="500"/><br/>
+</div>
 #### Reinforcement Learning:
 
 After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies.
