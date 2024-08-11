@@ -37,7 +37,7 @@ Users can select from various RNNs optimized for time-series modeling, including
 ##### Clone the Repository
 ```
 git clone https://github.com/SPARC-FAIR-Codeathon/2024-team-8.git
-cd 2024-team-8/surrogate_modeling_tool
+cd 2024-team-8/sparcrl_surrogate
 ```
 
 ##### Create and Activate a Conda Environment:
@@ -52,7 +52,7 @@ conda activate sparcrl
 ##### Run the Surrogate Modeling Tool: 
 Now you are all set to run the surrogate modeling tool. To do so run the following command on your command line.
 ```
-python surrogate_modeling_tool.py
+python sparcrl_surrogate.py
 ```
 
 In the first step, select a dataset from the dropdown menu which is automatically populated with available datasets on the SPARC platform. Currently, the datasets are limited to time series data. Once you have selected a model you can inspect the model metadata like model description, creator, creation date, version, etc. Additionally, a large language model is used to generate suggestions on how to use the dataset for reinforcement learning. Once you have chosen your dataset, you can download and extract the data from SPARC by hitting the 'Get Dataset!' button. You will be asked in what folder to save the data. After that, you can proceed to the next step, to select the file(s) to use for training the surrogate model by hitting the 'Next' button.<br/><br/>
