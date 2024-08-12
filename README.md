@@ -1,5 +1,10 @@
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparc_rl_logo.png?raw=true" style="display: block; width: 30%;"/>
 
+![Stable Baselines 3](https://img.shields.io/badge/Stable%20Baselines-v3.0.0-green)
+![Gymnasium](https://img.shields.io/badge/Gymnasium-0.29.1-red)
+![SB3-Contrib](https://img.shields.io/badge/SB3--Contrib-2.3.0-violet)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-2.15.0-orange)
+
 # Reinforcement Learning for Medical Device Control Made Easy
 The control of medical devices, particularly in applications like neuromodulation, is increasingly focused on the development of closed-loop systems. These systems are gaining attention because they allow for real-time adjustments based on continuous feedback, leading to more precise and personalized treatments. However, developing the adaptive intelligence required for closed-loop control often demands specialized knowledge in reinforcement learning, posing a significant barrier for many researchers. SPARC.RL addresses this challenge by offering a proof-of-concept toolchain that simplifies the training of state-of-the-art reinforcement learning agents, even for those without deep expertise in the field. By leveraging the powerful Stable Baselines 3 framework and seamlessly integrating data from the SPARC platform with models from oSPARC, SPARC.RL democratizes access to advanced reinforcement learning techniques. This toolchain empowers researchers to explore and implement sophisticated control strategies, accelerating the development of more effective and personalized medical interventions through closed-loop systems.
 
