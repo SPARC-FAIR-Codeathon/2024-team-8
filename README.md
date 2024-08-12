@@ -100,12 +100,16 @@ The trained surrogate model then serves an input to the SPARC.RL Train Agent nod
 </p>
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_surrogate_training.png?raw=true" alt=" Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node"/><br/>
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_surrogate_training.png?raw=true" alt="Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node"/><br/>
         <b>Figure 8.</b> Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node.</p>
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_surrogate_training_result.png?raw=true" alt=" Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC."/><br/>
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_surrogate_training_result.png?raw=true" alt="Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC."/><br/>
         <b>Figure 9.</b> Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC.</p>
+
+<p align="center">
+<img src="[https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_surrogate_training_result.png?raw=true](https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_train_rl_agent.png?raw=true)" alt="Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC."/><br/>
+        <b>Figure 10.</b> Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC.</p>
 
 After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies.
 The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
