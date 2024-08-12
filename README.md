@@ -1,4 +1,4 @@
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparc_rl_logo.png?raw=true" style="display: block; width: 30%;"/>
+<img src="./img/sparc_rl_logo_wb.png" style="display: block; width: 30%;"/><br/>
 
 ![Stable Baselines 3](https://img.shields.io/badge/Stable%20Baselines-v3.0.0-green)
 ![Gymnasium](https://img.shields.io/badge/Gymnasium-0.29.1-red)
@@ -21,7 +21,7 @@ This toolchain was developed during the [2024 SPARC FAIR Codeathon](https://spar
 The SPARC.RL toolchain consists of a standalone client that is used to obtain appropriate datasets for reinforcement learning from the [SPARC](https://sparc.science/) platform. This also involves using a large language model to present suggestions to the user on how to use the selected dataset in reinforcement learning. The standalone client helps to preprocess the data, design a proper neural network architecturem and train the model. The result is trained model that is saved to the hard disk. The second component is a [oSPARC](https://osparc.io/) application enables the use of the [Stable Baselines 3](https://stable-baselines3.readthedocs.io/) framework harnessing the computational power of oSPARC. Here the user can load the pre-trained surrogate model and parameterize the reinforcement learning policy and training.<br/><br/>
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/toolchain_overview.png?raw=true" alt="Overview of the SPARC.RL toolchain." width="800"/><br/>
+<img src="./img/toolchain_overview_wb.png" alt="Overview of the SPARC.RL toolchain." width="800"/><br/>
   <b>Figure 1.</b> Overview of the SPARC.RL toolchain.
 </p>
 
@@ -66,12 +66,12 @@ python sparcrl_surrogate.py
 
 In the first step, select a dataset from the dropdown menu which is automatically populated with available datasets on the SPARC platform. Currently, the datasets are limited to time series data. Once you have selected a model you can inspect the model metadata like model description, creator, creation date, version, etc. Additionally, a large language model is used to generate suggestions on how to use the dataset for reinforcement learning. Once you have chosen your dataset, you can download and extract the data from SPARC by hitting the 'Get Dataset!' button. You will be asked in what folder to save the data. After that, you can proceed to the next step, to select the file(s) to use for training the surrogate model by hitting the 'Next' button.<br/><br/>
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sprac_rl_select_dataset_from_sparc.png?raw=true" alt="Select dataset from SPARC platform" width="500"/><br/>
+<img src="./img/sprac_rl_select_dataset_from_sparc.png" alt="Select dataset from SPARC platform" width="500"/><br/>
   <b>Figure 2.</b> Select dataset from SPARC platform to train surrogate model.
 </p><br/>
 Once you have chosen and downloaded an appropriate dataset, you can select one of the available files containing experimental data using the dropdown menu. The data is automatically filtered for appropriate file types. Currently, only the .hdf5 file format is supported. After you have selected a file, the data is pre-processed to bring it in a proper format for training the model. You can display the pre-processeed data using by hitting the 'Plot Data!' button. If you are satisfied with the preprocessed data, you can move to the next step by hitting the 'Next' button.<br/><br/>
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_inspect_preprocessed_dataset.png?raw=true" alt="Select data file from dataset and preprocess" width="800"/><br/>
+<img src="./img/sparcrl_inspect_preprocessed_dataset.png" alt="Select data file from dataset and preprocess" width="800"/><br/>
     <b>Figure 3.</b> Select a file from the dataset for model training and inspect preprocessed data.
 </p>
 <br/>
@@ -79,18 +79,18 @@ After loading the data for training, you can define your model architecture. For
 <i>Note: The status messages about the training are written to the console and not passed on to the graphical user interface for now. If you want to observe the training progress, please check the terminal that you used to start the graphical user interface. Also, during the training, the user interface might get unresponsive. Do not worry, just wait until the training is finished.</i>
 <br/><br/>
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_train_model_2.png?raw=true" alt="Define model architecture and start the training of the surrogate model." height="500"/><br/>
+<img src="./img/sparcrl_train_model_2.png" alt="Define model architecture and start the training of the surrogate model." height="500"/><br/>
       <b>Figure 4.</b> Define model architecture and set training parameters.
 </p><br/>
 Now you can sit back and watch Tensorflow doing its magic to train your surrogate model. The trained surrogate model is saved along with the training data into the `training_data` directory in your project folder.
 <br/><br/>
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/training_progress.png?raw=true" alt="Training of the model" width="800"/><br/>
+<img src="./img/training_progress.png" alt="Training of the model" width="800"/><br/>
         <b>Figure 5.</b> Observe training progress.
 </p>
 After the training is completed, you can access the training data (.csv files) and the trained model (.h5 file) that was saved to your hard disk from your project directory. 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_data_saved_to_hd.png?raw=true" alt="Data saved to hard disk." width="500"/><br/>
+<img src="./img/sparcrl_data_saved_to_hd.png" alt="Data saved to hard disk." width="500"/><br/>
         <b>Figure 6.</b> Training data and trained model saved to hard disk.
 </p>
 
@@ -100,16 +100,16 @@ Training of the surrogate model can also be done on the oSPARC platform, however
 The trained surrogate model then serves an input to the SPARC.RL Train Agent node which is used to train the reinforcement learning agent. The output of this node is a .zip file containing the trained reinforcement learning agent (ppo_cardiovascular.zip) which then can be used as a controller.
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_nodes_overview.png?raw=true" alt="Data saved to hard disk."/><br/>
+<img src="./img/osparc_nodes_overview.png" alt="Data saved to hard disk."/><br/>
         <b>Figure 7.</b> Overview of SPARC.RL nodes on oSPARC.
 </p>
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_surrogate_training.png?raw=true" alt="Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node"/><br/>
+<img src="./img/osparc_surrogate_training.png" alt="Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node"/><br/>
         <b>Figure 8.</b> Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node.</p>
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_surrogate_training_result.png?raw=true" alt="Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC."/><br/>
+<img src="./img/osparc_surrogate_training_result.png" alt="Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC."/><br/>
         <b>Figure 9.</b> Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC.</p>
 
 After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies. The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
@@ -146,11 +146,9 @@ save_path = ppo_cardiovascular
 ```
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_train_rl_agent.png?raw=true" alt="Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC."/><br/>
+<img src="./img/osparc_train_rl_agent.png" alt="Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC."/><br/>
         <b>Figure 10.</b> Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC.</p>
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_controller_test_on_surrogate_model.png?raw=true" alt="Testing trained agent on the surrogate model."/><br/>
+<img src="./img/osparc_controller_test_on_surrogate_model.png" alt="Testing trained agent on the surrogate model."/><br/>
         <b>Figure 11.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.</p>
-
-
