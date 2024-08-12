@@ -91,7 +91,7 @@ After loading the data for training, you can define your model architecture. For
 <i>Note: The status messages about the training are written to the console and not passed on to the graphical user interface for now. If you want to observe the training progress, please check the terminal that you used to start the graphical user interface. Also, during the training, the user interface might get unresponsive. Do not worry, just wait until the training is finished.</i>
 <br/><br/>
 <p align="center">
-<img src="./img/model_training.gif?raw=true" alt="Define model architecture and start the training of the surrogate model." height="800"/><br/>
+<img src="./img/model_training.gif?raw=true" alt="Define model architecture and start the training of the surrogate model." height="600"/><br/>
       <b>Figure 5.</b> Define model architecture and set training parameters.
 </p><br/>
 Now you can sit back and watch Tensorflow doing its magic to train your surrogate model. The trained surrogate model is saved along with the training data into the `training_data` directory in your project folder.
