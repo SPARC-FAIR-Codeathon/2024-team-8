@@ -107,6 +107,8 @@ After the training is completed, you can access the training data (.csv files) a
 </p>
 
 ### Reinforcement Learning using SPARC.RL on oSPARC:
+
+#### SPARC.RL Train Surrogate Model node
 Training of the surrogate model can also be done on the oSPARC platform, however without the ability to directly select data from the SPARC platform as previously shown in the standalone client. The training can be run using the SPARC.RL Train Surrogate Model node which tries to approximate the relationship of the inputs and outputs of a dynamical system which are passed to the node using csv files (input.csv and output .csv). The SPARC.RL Train Surrogate Model node saves the trained deep neural network to a .h5 file (model.h5). 
 
 The trained surrogate model then serves an input to the SPARC.RL Train Agent node which is used to train the reinforcement learning agent. The output of this node is a .zip file containing the trained reinforcement learning agent (ppo_cardiovascular.zip) which then can be used as a controller.
@@ -116,16 +118,21 @@ The trained surrogate model then serves an input to the SPARC.RL Train Agent nod
         <b>Figure 8.</b> Overview of SPARC.RL nodes on oSPARC.
 </p>
 
+Below, in Figure 9, you can see an example output of training a surrogate model using the SPARC.RL Train Surrogate Model node on a synthetic dataset generated with the model of Haberbusch et al. (https://sparc.science/datasets/335?type=simulation) in which stimulation intensities were varied in a range of 0 mA to 5 mA in steps of 0.1 mA and the respective heart rate changes captured. The model included only a single long short-term memory (LSTM) layer. The data was split into training, test and validation set in a ratio of 8:1:1.
+
 <p align="center">
 <img src="./img/osparc_surrogate_training.png" alt="Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node"/><br/>
         <b>Figure 9.</b> Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node.</p>
+
+The trained surrogate model showed very good performance in reproducing the dynamics of the full in-silico model, as illustrated for one example of the test dataset shown below (Figure 10).
 
 <p align="center">
 <img src="./img/osparc_surrogate_training_result.png" alt="Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC."/><br/>
         <b>Figure 10.</b> Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC.</p>
 
 After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies. The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
-Advanced Training Customization:
+
+#### SPARC.RL Train Agent Node:
 
 ##### Paramterize Reinforcement Learning
 The SPARC.RL Train Agent node is designed to allow various aspects of the reinforcement learning setup and testing process to be parameterized. Environment settings, such as the choice between discrete or continuous action spaces and the number of parallel environments for training, can be adjusted. The path to the surrogate model and the specific heart rate targets used during testing are also configurable. PPO model parameters, including the policy type, number of training steps, batch size, and total timesteps, can be defined to optimize the training process. Additionally, testing parameters, such as the number of iterations and the interval for changing heart rate targets, can be customized. Finally, the paths for saving and loading trained models are configurable, enabling the script to be flexible and adaptable to different experimental needs.
