@@ -37,6 +37,7 @@ Additionally, SPARC.RL provides a fully integrated reinforcement learning pipeli
 <br/>
   <b>Figure 2.</b> Fully integrated SPARC.RL reinforcement pipeline on oSPARC.
 </p>
+<br/>
 
 ## Dataset and Model Integration
 
@@ -99,8 +100,9 @@ Once you have chosen and downloaded an appropriate dataset, you can select one o
 <br/>
 After loading the data for training, you can define your model architecture. For now, the tool allows you to use different types of recurrent neural networks including LSTM, Bi-LSTM, GRU and vanilla RNNs. You can adjust the number of layers and units per layer based on the complexity of the dynamics in the data that you are trying to capture. Additionally, you can specify training-related parameters like batch-size, learning rate, optimizer, number of epochs and also early stopping to prevent model overfitting. Once you have defined the parameters you can hit the 'Train!' button to start the training. This will print the final model architecture and start the training. For now, a fixed ratio of 8:1:1 for training, validation, and test datasets is used. Currently, if you want to adjust the ratio, you unfortunately have to dig into the code.
 
-<br/>
+<br/><br/>
 <i>Note: The status messages about the training are written to the console and not passed on to the graphical user interface for now. If you want to observe the training progress, please check the terminal that you used to start the graphical user interface. Also, during the training, the user interface might get unresponsive. Do not worry, just wait until the training is finished.</i>
+<br/>
 
 <br/>
 <p align="center">
@@ -111,6 +113,7 @@ After loading the data for training, you can define your model architecture. For
 
 <br/>
 Now you can sit back and watch Tensorflow doing its magic to train your surrogate model. The trained surrogate model is saved along with the training data into the `training_data` directory in your project folder.
+<br/>
 
 <br/>
 <p align="center">
@@ -121,6 +124,7 @@ Now you can sit back and watch Tensorflow doing its magic to train your surrogat
 
 <br/>
 After the training is completed, you can access the training data (.csv files) and the trained model (.h5 file) that was saved to your hard disk from your project directory.
+<br/>
 
 <br/>
 <p align="center">
@@ -128,6 +132,7 @@ After the training is completed, you can access the training data (.csv files) a
 <br/>
         <b>Figure 7.</b> Training data and trained model saved to hard disk.
 </p>
+<br/>
 
 ## Reinforcement Learning using SPARC.RL on oSPARC
 
@@ -145,6 +150,7 @@ The trained surrogate model then serves an input to the SPARC.RL Train Agent nod
 
 <br/>
 Below, in Figure 9, you can see an example output of training a surrogate model using the SPARC.RL Train Surrogate Model node on a synthetic dataset generated with the model of [Haberbusch et al.](https://sparc.science/datasets/335) in which stimulation intensities were varied in a range of 0 mA to 5 mA in steps of 0.1 mA and the respective heart rate changes captured. The model included only a single Long Short-Term Memory (LSTM) layer. The data was split into training, test and validation set in a ratio of 8:1:1.
+<br/>
 
 <br/>
 <p align="center">
@@ -155,6 +161,7 @@ Below, in Figure 9, you can see an example output of training a surrogate model 
 
 <br/>
 The trained surrogate model showed very good performance in reproducing the dynamics of the full in-silico model, as illustrated for one example of the test dataset shown below (Figure 10).
+<br/>
 
 <br/>
 <p align="center">
@@ -209,6 +216,7 @@ An example output of the training to the respective Jupyterlab notebook of the S
 
 <br/>
 The same output is visualized in Figure 12 below as a tensorboard depicting the loss function, policy gradient loss, and value loss for the training of the reinforcement learning algorithm over 50,000 total timesteps using the configuration specified in the rl_config.ini file shown above showing good convergence of the learning and suggesting proper controlle rperformance.
+<br/>
 
 <br/>
 <p align="center">
@@ -219,6 +227,7 @@ The same output is visualized in Figure 12 below as a tensorboard depicting the 
 
 <br/>
 After completion of the training phase, the trained agent was tested on the surrogate model in a heart rate tracking task lasting for 100 seconds, in which the agent had to track several randomly changing setpoint heart rates (changes occured every 50 seconds) from the setpoints specified in the .ini file above (72.0 bpm, 74.0bpm, ..., 82.0bpm). The controller showed a very satisfactory performance in terms of steady state error quantified by the mean squared error between setpoint and measured heart rate of only 1.75 bpm (Figure 13).
+<br/>
 
 <br/>
 <p align="center">
@@ -226,6 +235,7 @@ After completion of the training phase, the trained agent was tested on the surr
 <br/>
         <b>Figure 13.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.
 </p>
+<br/>
 
 #### SPARC.RL Controller
 The controller can be deployed with the full cardiovascular system model from Haberbusch et al. to form a complete control loop for evualation. It is [available on oSPARC](https://osparc.io/study/fa885632-4b04-11ee-869a-02420a0bd26e).
