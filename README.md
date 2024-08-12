@@ -182,5 +182,8 @@ After completion of the training phase, the trained agent was tested on the surr
 <img src="./img/osparc_controller_test_on_surrogate_model.png" alt="Testing trained agent on the surrogate model."/><br/>
         <b>Figure 13.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.</p>
 
+#### SPARC.RL Controller
+Finally, the controller can be deployed in the control loop to be evaluated on the full cardiovascular system mode of Haberbusch et al. available on oSPARC (https://osparc.io/study/fa885632-4b04-11ee-869a-02420a0bd26e).
+
 ## License
 This project is distributed under the terms of the [MIT License](./LICENSE).
