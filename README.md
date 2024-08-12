@@ -19,19 +19,21 @@ This toolchain and oSPARC pipeline were developed during the [2024 SPARC FAIR Co
 <i>Note: While this project offers powerful capabilities, it is an initial prototype serving as a proof of concept and no guarantees are made regarding its absence of bugs and interoperability with datasets other than those used during development.</i>
 
 
-## Key Features:
+## Key Features
 The SPARC.RL toolchain consists of a standalone client that is used to obtain and preprocess appropriate datasets for reinforcement learning from the [SPARC](https://sparc.science/) platform and an oSPARC pipeline that allows the development of reinforcement learning-based control algorithms using Stable Baselines 3 (Figure 1). This also involves using a large language model to present suggestions to the user on how to use the selected dataset in reinforcement learning. The standalone client helps to preprocess the data, design a proper neural network architecture, and train the model. The result is trained model that is saved to the hard disk. The second component is a [oSPARC](https://osparc.io/) application enables the use of the Stable Baselines 3 framework harnessing the computational power of oSPARC (Figure 2). Here the user can load the pre-trained surrogate model and parameterize the reinforcement learning policy and training.
 
 <p>
 Additionally, SPARC.RL provides a fully integrated reinforcement learning pipeline running on the oSPARC platform that also enables the possibility of training surrogate models for efficient representation of system dynamics (Figure 2).
 <p>
   
-<br/><br/>
+<br/>
 
 <p align="center">
 <img src="./img/toolchain_overview_wb.png" alt="Overview of the SPARC.RL toolchain." width="800"/><br/>
   <b>Figure 1.</b> Overview of the SPARC.RL toolchain.
 </p>
+
+<br/>
 
 <p align="center">
 <img src="./img/osparc_pipeline_animated.gif?raw=true" width="800"/><br/>
@@ -39,19 +41,19 @@ Additionally, SPARC.RL provides a fully integrated reinforcement learning pipeli
 </p>
 
 
-## Dataset and Model Integration:
+## Dataset and Model Integration
 
 SPARC.RL supports the selection and use of time-series datasets directly loaded from the SPARC platform using the [SPARC Python client](https://docs.sparc.science/docs/sparc-python-client).
 Users can also work with selected [oSPARC](https://osparc.io/) models, enabling the training of RL agents in a highly flexible and customizable manner.<br/><br/>
-<i>Note: During development of our toolchain during the SPARC Codeathon 2024, we used the dataset of Oliver Armitage et al. "Influence of vagus nerve stimulation on vagal and cardiac activity in freely moving pigs" available on sparc (doi: [10.26275/aw2z-a49z](https://doi.org/10.26275/aw2z-a49z)) </i>
+<i>Note: During development of our toolchain during the SPARC Codeathon 2024, we used the dataset of Oliver Armitage et al. "Influence of vagus nerve stimulation on vagal and cardiac activity in freely moving pigs" available on sparc (doi: [10.26275/aw2z-a49z](https://doi.org/10.26275/aw2z-a49z)). </i>
 
-### Customizable Inputs and Outputs:
+### Customizable Inputs and Outputs
 While the ultimate goal was that users can choose from available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs, in the current version, this can only be done by modifying the code. Later versions should allow the user to pick appropriate actions and observables directly from the graphical user interface.
 
-### Data-driven Modelling:
+### Data-driven Modelling
 
 SPARC.RL offers multiple deep learning architectures to create surrogate models of experimental data available on [SPARC](https://sparc.science/) or [oSPARC](https://osparc.io) models.
-Users can select from various RNNs optimized for time-series modeling, including vanilla recurrent neural networks (RNNs), long short-term memory (LSTM) networks, bi-directional LSTM (BiLSTM) networks, and gated recurrent units (GRUs), providing flexibility in how the models are trained. Users can configure their network and training parameters according to their needs. The adjustable parameters include the number of layers, number of units per layer, optimizer, learning rate, batch size, number of epochs, and early stopping policies.
+Users can select from various RNNs optimized for time-series modeling, including vanilla Recurrent Neural Networks (RNNs), Long Short-Term Memory (LSTM) networks, Bi-directional LSTM (BiLSTM) networks, and Gated Recurrent Units (GRUs), providing flexibility in how the models are trained. Users can configure their network and training parameters according to their needs. The adjustable parameters include the number of layers, number of units per layer, optimizer, learning rate, batch size, number of epochs, and early stopping policies.
 
 ### Steps to Generate the Surrogate Model
 
@@ -63,7 +65,7 @@ git clone https://github.com/SPARC-FAIR-Codeathon/2024-team-8.git
 cd 2024-team-8/sparcrl_surrogate
 ```
 
-##### Create and Activate a Conda Environment:
+##### Create and Activate a Conda Environment
 If you don't have Conda installed, you can install Miniconda or Anaconda as they come with Conda included.
 
 Create and activate the environment using the provided `environment.yml` file:
@@ -72,7 +74,7 @@ conda env create -f environment.yml
 conda activate sparcrl
 ```
 
-##### Run the Surrogate Modeling Tool: 
+##### Run the Surrogate Modeling Tool 
 Now you are all set to run the surrogate modeling tool. To do so run the following command on your command line.
 ```
 python sparcrl_surrogate.py
@@ -108,7 +110,7 @@ After the training is completed, you can access the training data (.csv files) a
         <b>Figure 7.</b> Training data and trained model saved to hard disk.
 </p>
 
-## Reinforcement Learning using SPARC.RL on oSPARC:
+## Reinforcement Learning using SPARC.RL on oSPARC
 
 #### SPARC.RL Train Surrogate Model Node
 Training of the surrogate model can also be done on the oSPARC platform, however without the ability to directly select data from the SPARC platform as previously shown in the standalone client. The training can be run using the SPARC.RL Train Surrogate Model node which tries to approximate the relationship of the inputs and outputs of a dynamical system which are passed to the node using csv files (input.csv and output .csv). The SPARC.RL Train Surrogate Model node saves the trained deep neural network to a .h5 file (model.h5). 
@@ -120,7 +122,7 @@ The trained surrogate model then serves an input to the SPARC.RL Train Agent nod
         <b>Figure 8.</b> Overview of SPARC.RL nodes on oSPARC.
 </p>
 
-Below, in Figure 9, you can see an example output of training a surrogate model using the SPARC.RL Train Surrogate Model node on a synthetic dataset generated with the model of Haberbusch et al. (https://sparc.science/datasets/335?type=simulation) in which stimulation intensities were varied in a range of 0 mA to 5 mA in steps of 0.1 mA and the respective heart rate changes captured. The model included only a single long short-term memory (LSTM) layer. The data was split into training, test and validation set in a ratio of 8:1:1.
+Below, in Figure 9, you can see an example output of training a surrogate model using the SPARC.RL Train Surrogate Model node on a synthetic dataset generated with the model of [Haberbusch et al.](https://sparc.science/datasets/335) in which stimulation intensities were varied in a range of 0 mA to 5 mA in steps of 0.1 mA and the respective heart rate changes captured. The model included only a single Long Short-Term Memory (LSTM) layer. The data was split into training, test and validation set in a ratio of 8:1:1.
 
 <p align="center">
 <img src="./img/osparc_surrogate_training.png" alt="Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node"/><br/>
@@ -134,7 +136,7 @@ The trained surrogate model showed very good performance in reproducing the dyna
 
 After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies. The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
 
-#### SPARC.RL Train Agent Node:
+#### SPARC.RL Train Agent Node
 
 ##### Paramterize Reinforcement Learning
 The SPARC.RL Train Agent node is designed to allow various aspects of the reinforcement learning setup and testing process to be parameterized. Environment settings, such as the choice between discrete or continuous action spaces and the number of parallel environments for training, can be adjusted. The path to the surrogate model and the specific heart rate targets used during testing are also configurable. PPO model parameters, including the policy type, number of training steps, batch size, and total timesteps, can be defined to optimize the training process. Additionally, testing parameters, such as the number of iterations and the interval for changing heart rate targets, can be customized. Finally, the paths for saving and loading trained models are configurable, enabling the script to be flexible and adaptable to different experimental needs.
@@ -185,7 +187,7 @@ After completion of the training phase, the trained agent was tested on the surr
         <b>Figure 13.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.</p>
 
 #### SPARC.RL Controller
-Finally, the controller can be deployed in the control loop to be evaluated on the full cardiovascular system mode of Haberbusch et al. available on oSPARC (https://osparc.io/study/fa885632-4b04-11ee-869a-02420a0bd26e).
+The controller can be deployed with the full cardiovascular system model from Haberbusch et al. to form a complete control loop for evualation. It is [available on oSPARC](https://osparc.io/study/fa885632-4b04-11ee-869a-02420a0bd26e).
 
 ## License
 This project is distributed under the terms of the [MIT License](./LICENSE).
