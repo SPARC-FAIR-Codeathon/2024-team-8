@@ -32,7 +32,7 @@ Additionally, SPARC.RL provides a fully integrated reinforcement learning pipeli
 </p>
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_fully_integrated_pipeline_zoomed.png?raw=true" width="600"/><br/>
+<img src="./img/osparc_pipeline_animated.gif?raw=true" width="800"/><br/>
   <b>Figure 2.</b> Fully integrated SPARC.RL reinforcement pipeline on oSPARC.
 </p>
 
@@ -78,12 +78,12 @@ python sparcrl_surrogate.py
 
 In the first step, select a dataset from the dropdown menu which is automatically populated with available datasets on the SPARC platform. Currently, the datasets are limited to time series data. Once you have selected a model you can inspect the model metadata like model description, creator, creation date, version, etc. Additionally, a large language model is used to generate suggestions on how to use the dataset for reinforcement learning. Once you have chosen your dataset, you can download and extract the data from SPARC by hitting the 'Get Dataset!' button. You will be asked in what folder to save the data. After that, you can proceed to the next step, to select the file(s) to use for training the surrogate model by hitting the 'Next' button.<br/><br/>
 <p align="center">
-<img src="./img/sprac_rl_select_dataset_from_sparc.png" alt="Select dataset from SPARC platform" width="500"/><br/>
+<img src="./img/choose_dataset.gif?raw=true" alt="Select dataset from SPARC platform" width="500"/><br/>
   <b>Figure 3.</b> Select dataset from SPARC platform to train surrogate model.
 </p><br/>
 Once you have chosen and downloaded an appropriate dataset, you can select one of the available files containing experimental data using the dropdown menu. The data is automatically filtered for appropriate file types. Currently, only the .hdf5 file format is supported. After you have selected a file, the data is pre-processed to bring it in a proper format for training the model. You can display the pre-processeed data using by hitting the 'Plot Data!' button. If you are satisfied with the preprocessed data, you can move to the next step by hitting the 'Next' button.<br/><br/>
 <p align="center">
-<img src="./img/sparcrl_inspect_preprocessed_dataset.png" alt="Select data file from dataset and preprocess" width="800"/><br/>
+<img src="./img/chose_file.gif?raw=true" alt="Select data file from dataset and preprocess" width="800"/><br/>
     <b>Figure 4.</b> Select a file from the dataset for model training and inspect preprocessed data.
 </p>
 <br/>
@@ -91,7 +91,7 @@ After loading the data for training, you can define your model architecture. For
 <i>Note: The status messages about the training are written to the console and not passed on to the graphical user interface for now. If you want to observe the training progress, please check the terminal that you used to start the graphical user interface. Also, during the training, the user interface might get unresponsive. Do not worry, just wait until the training is finished.</i>
 <br/><br/>
 <p align="center">
-<img src="./img/sparcrl_train_model_2.png" alt="Define model architecture and start the training of the surrogate model." height="500"/><br/>
+<img src="./img/model_training.gif?raw=true" alt="Define model architecture and start the training of the surrogate model." height="500"/><br/>
       <b>Figure 5.</b> Define model architecture and set training parameters.
 </p><br/>
 Now you can sit back and watch Tensorflow doing its magic to train your surrogate model. The trained surrogate model is saved along with the training data into the `training_data` directory in your project folder.
