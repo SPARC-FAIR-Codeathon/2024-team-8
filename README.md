@@ -91,7 +91,7 @@ Training of the surrogate model can also be done on the oSPARC platform, however
 The trained surrogate model then serves an input to the SPARC.RL Train Agent node which is used to train the reinforcement learning agent. The output of this node is a .zip file containing the trained reinforcement learning agent (ppo_cardiovascular.zip) which then can be used as a controller.
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_overview.png?raw=true" alt="Data saved to hard disk." width="900"/><br/>
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_overview.png?raw=true" alt="Data saved to hard disk."/><br/>
         <b>Figure 7.</b> Overview of SPARC.RL nodes on oSPARC.
 </p>
 
