@@ -107,14 +107,41 @@ The trained surrogate model then serves an input to the SPARC.RL Train Agent nod
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_surrogate_training_result.png?raw=true" alt="Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC."/><br/>
         <b>Figure 9.</b> Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC.</p>
 
+After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies. The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
+Advanced Training Customization:
+
+##### Paramterize Reinforcement Learning
+The SPARC.RL Train Agent node is designed to allow various aspects of the reinforcement learning setup and testing process to be parameterized. Environment settings, such as the choice between discrete or continuous action spaces and the number of parallel environments for training, can be adjusted. The path to the surrogate model and the specific heart rate targets used during testing are also configurable. PPO model parameters, including the policy type, number of training steps, batch size, and total timesteps, can be defined to optimize the training process. Additionally, testing parameters, such as the number of iterations and the interval for changing heart rate targets, can be customized. Finally, the paths for saving and loading trained models are configurable, enabling the script to be flexible and adaptable to different experimental needs.
+
+The reinforcement learning can be adjusted to ones needs by modifying the rl_config.ini file that is used as input to the SPARC.RL Train agent node. As example, the parameters used during the codeathon are printed below:
+
+```
+[Environment]
+discrete = True
+model_path = model.h5
+env_id = 1337
+parallel_envs = 6
+target_hrs = 72.0, 74.0, 76.0, 78.0, 80.0, 82.0
+
+[PPO]
+policy = MlpPolicy
+n_steps = 256
+batch_size = 32
+total_timesteps = 50000
+tensorboard_log = ./tensorboard_logs/
+tb_log_name = first_run
+
+[Testing]
+test_iterations = 1000
+steps_per_target_change = 50
+render_mode = human
+
+[SavedModel]
+save_path = ppo_cardiovascular
+```
+
 <p align="center">
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_train_rl_agent.png?raw=true" alt="Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC."/><br/>
         <b>Figure 10.</b> Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC.</p>
 
-After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies.
-The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
-Advanced Training Customization:
 
-Users can decide whether to use observation and/or action normalization, set batch sizes, and define the number of training steps to optimize performance.
-SPARC.RL also allows tracking of a fixed setpoint or varying the setpoint within a specified range, adding an extra layer of flexibility to the training process.
-SPARC.RL is designed to democratize the use of reinforcement learning, making it accessible to researchers across various domains. With its intuitive interface and powerful features, SPARC.RL is set to become an essential tool for those looking to harness the full potential of reinforcement learning in their research.
