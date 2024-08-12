@@ -37,13 +37,13 @@ Additionally, SPARC.RL provides a fully integrated reinforcement learning pipeli
 </p>
 
 
-### Dataset and Model Integration:
+## Dataset and Model Integration:
 
 SPARC.RL supports the selection and use of time-series datasets directly loaded from the SPARC platform using the [SPARC Python client](https://docs.sparc.science/docs/sparc-python-client).
 Users can also work with selected [oSPARC](https://osparc.io/) models, enabling the training of RL agents in a highly flexible and customizable manner.<br/><br/>
 <i>Note: During development of our toolchain during the SPARC Codeathon 2024, we used the dataset of Oliver Armitage et al. "Influence of vagus nerve stimulation on vagal and cardiac activity in freely moving pigs" available on sparc (doi: [10.26275/aw2z-a49z](https://doi.org/10.26275/aw2z-a49z)) </i>
 
-#### Customizable Inputs and Outputs:
+### Customizable Inputs and Outputs:
 While the ultimate goal was that users can choose from available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs, in the current version, this can only be done by modifying the code. Later versions should allow the user to pick appropriate actions and observables directly from the graphical user interface.
 
 ### Data-driven Modelling:
@@ -106,9 +106,9 @@ After the training is completed, you can access the training data (.csv files) a
         <b>Figure 7.</b> Training data and trained model saved to hard disk.
 </p>
 
-### Reinforcement Learning using SPARC.RL on oSPARC:
+## Reinforcement Learning using SPARC.RL on oSPARC:
 
-#### SPARC.RL Train Surrogate Model node
+#### SPARC.RL Train Surrogate Model Node
 Training of the surrogate model can also be done on the oSPARC platform, however without the ability to directly select data from the SPARC platform as previously shown in the standalone client. The training can be run using the SPARC.RL Train Surrogate Model node which tries to approximate the relationship of the inputs and outputs of a dynamical system which are passed to the node using csv files (input.csv and output .csv). The SPARC.RL Train Surrogate Model node saves the trained deep neural network to a .h5 file (model.h5). 
 
 The trained surrogate model then serves an input to the SPARC.RL Train Agent node which is used to train the reinforcement learning agent. The output of this node is a .zip file containing the trained reinforcement learning agent (ppo_cardiovascular.zip) which then can be used as a controller.
