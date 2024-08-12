@@ -60,7 +60,7 @@ Users can select from various RNNs optimized for time-series modeling, including
 #### Installation 
 
 ##### Clone the Repository
-```
+```shell
 git clone https://github.com/SPARC-FAIR-Codeathon/2024-team-8.git
 cd 2024-team-8/sparcrl_surrogate
 ```
@@ -69,14 +69,14 @@ cd 2024-team-8/sparcrl_surrogate
 If you don't have Conda installed, you can install Miniconda or Anaconda as they come with Conda included.
 
 Create and activate the environment using the provided `environment.yml` file:
-```
+```shell
 conda env create -f environment.yml
 conda activate sparcrl
 ```
 
 ##### Run the Surrogate Modeling Tool 
 Now you are all set to run the surrogate modeling tool. To do so run the following command on your command line.
-```
+```shell
 python sparcrl_surrogate.py
 ```
 
