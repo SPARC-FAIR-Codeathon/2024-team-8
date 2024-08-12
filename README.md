@@ -7,7 +7,7 @@ SPARC.RL is a first proof-of-concept toolchain designed to enable researchers, e
 
 This toolchain was developed during the [2024 SPARC FAIR Codeathon](https://sparc.science/news-and-events/events/2024-sparc-fair-codeathon) by Max Haberbusch and John Bentley.
 
-<b>The framework can be accessed on [oSPARC](https://osparc.io/).<b/>.
+<b>The framework can be accessed on [oSPARC](https://osparc.io/).</b>
 
 <i>Note: While this toolchain offers powerful capabilities, please note that it is an initial prototype serving as a proof of concept, and no guarantees are made regarding its bug-freeness and operability with other datasets than those used during development.</i>
 
