@@ -150,7 +150,12 @@ save_path = ppo_cardiovascular
         <b>Figure 10.</b> Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC.</p>
 
 <p align="center">
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/sparcrl_agent_training_loss.png?raw=true" alt="Training loss reinforcement learning."/><br/>
+        <b>Figure 11.</b> Loss for reinforcement learning agent training.</p>
+
+
+<p align="center">
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_controller_test_on_surrogate_model.png?raw=true" alt="Testing trained agent on the surrogate model."/><br/>
-        <b>Figure 11.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.</p>
+        <b>Figure 12.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.</p>
 
 
