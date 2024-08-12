@@ -18,7 +18,7 @@ import openai
 from tensorflow.keras.losses import MeanSquaredError
 from tensorflow.keras.metrics import RootMeanSquaredError
 
-openai.api_key = "sk-icpZpIx-c--Wp_7yLadpLhZCIIVvrERkIMvvoQX0faT3BlbkFJxRJadr3XnANhtQBi_gC79rP01jG8qqx_w-Lsq_nD0A"
+openai.api_key = "### REPLACE BY YOUR API KEY ###"
 
 # Initialize the SPARC client (assuming connection is not required)
 client = SparcClient(connect=False)
