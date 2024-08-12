@@ -89,7 +89,7 @@ After the training is completed, you can access the training data (.csv files) a
         <b>Figure 6.</b> Training data and trained model saved to hard disk.
 </p>
 
-### Reinforcement Learning on oSPARC:
+### Reinforcement Learning using SPARC.RL on oSPARC:
 Training of the surrogate model can also be done on the oSPARC platform, however without the ability to directly select data from the SPARC platform as previously shown in the standalone client. The training can be run using the SPARC.RL Train Surrogate Model node which tries to approximate the relationship of the inputs and outputs of a dynamical system which are passed to the node using csv files (input.csv and output .csv). The SPARC.RL Train Surrogate Model node saves the trained deep neural network to a .h5 file (model.h5). 
 
 The trained surrogate model then serves an input to the SPARC.RL Train Agent node which is used to train the reinforcement learning agent. The output of this node is a .zip file containing the trained reinforcement learning agent (ppo_cardiovascular.zip) which then can be used as a controller.
