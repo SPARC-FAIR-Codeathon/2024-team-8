@@ -44,11 +44,12 @@ Additionally, SPARC.RL provides a fully integrated reinforcement learning pipeli
 ## Dataset and Model Integration
 
 SPARC.RL supports the selection and use of time-series datasets directly loaded from the SPARC platform using the [SPARC Python client](https://docs.sparc.science/docs/sparc-python-client).
-Users can also work with selected [oSPARC](https://osparc.io/) models, enabling the training of RL agents in a highly flexible and customizable manner.<br/><br/>
-<i>Note: During development of our toolchain during the SPARC Codeathon 2024, we used the dataset of Oliver Armitage et al. "Influence of vagus nerve stimulation on vagal and cardiac activity in freely moving pigs" available on sparc (doi: [10.26275/aw2z-a49z](https://doi.org/10.26275/aw2z-a49z)). </i>
+Users can also work with select [oSPARC](https://osparc.io/) models, enabling the training of RL agents in a highly flexible and customizable manner.
+<br/><br/>
+<i>Note: During development of our toolchain in the 2024 SPARC FAIR Codeathon, we used the Oliver Armitage et al. "Influence of vagus nerve stimulation on vagal and cardiac activity in freely moving pigs" dataset available on SPARC (DOI: [10.26275/aw2z-a49z](https://doi.org/10.26275/aw2z-a49z)).</i>
 
 ### Customizable Inputs and Outputs
-While the ultimate goal was that users can choose from available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs, in the current version, this can only be done by modifying the code. Later versions should allow the user to pick appropriate actions and observables directly from the graphical user interface.
+The ultimate goal is to allow users to choose from multiple available model inputs (actions) and model outputs (observables) to tailor the reinforcement learning process to their specific needs. However, in the current version, this can only be done by modifying the source code. Later versions will allow the user to pick appropriate actions and observables directly from the graphical user interface.
 
 ### Data-driven Modelling
 
@@ -80,7 +81,7 @@ Now you are all set to run the surrogate modeling tool. To do so run the followi
 python sparcrl_surrogate.py
 ```
 
-In the first step, select a dataset from the dropdown menu which is automatically populated with available datasets on the SPARC platform. Currently, the datasets are limited to time series data. Once you have selected a model you can inspect the model metadata like model description, creator, creation date, version, etc. Additionally, a large language model is used to generate suggestions on how to use the dataset for reinforcement learning. Once you have chosen your dataset, you can download and extract the data from SPARC by hitting the 'Get Dataset!' button. You will be asked in what folder to save the data. After that, you can proceed to the next step, to select the file(s) to use for training the surrogate model by hitting the 'Next' button.
+In the first step, select a dataset from the dropdown menu which is automatically populated with available datasets on the SPARC platform. Currently, the datasets are limited to time series data. Once you have selected a model, you can inspect the model metadata, including model description, creator, creation date, version, etc. Additionally, a large language model is used to generate suggestions on how to use the dataset for reinforcement learning. Once you have chosen your dataset, you can download and extract the data from SPARC by hitting the 'Get Dataset!' button. You will be asked for the file path to save the data. After that, you can proceed to the next step, which is to select the file(s) to use for training the surrogate model, by hitting the 'Next' button.
 
 <br/>
 <p align="center">
@@ -90,7 +91,8 @@ In the first step, select a dataset from the dropdown menu which is automaticall
 </p>
 
 <br/>
-Once you have chosen and downloaded an appropriate dataset, you can select one of the available files containing experimental data using the dropdown menu. The data is automatically filtered for appropriate file types. Currently, only the .hdf5 file format is supported. After you have selected a file, the data is pre-processed to bring it in a proper format for training the model. You can display the pre-processeed data using by hitting the 'Plot Data!' button. If you are satisfied with the preprocessed data, you can move to the next step by hitting the 'Next' button.<br/>
+Once you have chosen and downloaded an appropriate dataset, you can select one of the available files containing experimental data using the dropdown menu. The data is automatically filtered for appropriate file types. Currently, only the .hdf5 file format is supported. After you have selected a file, the data is pre-processed to bring it in the proper format for training the model. You can display the pre-processeed data by hitting the 'Plot Data!' button. If you are satisfied with the preprocessed data, you can move to the next step by hitting the 'Next' button.
+<br/>
 
 <br/>
 <p align="center">
@@ -100,10 +102,10 @@ Once you have chosen and downloaded an appropriate dataset, you can select one o
 </p>
 
 <br/>
-After loading the data for training, you can define your model architecture. For now, the tool allows you to use different types of recurrent neural networks including LSTM, Bi-LSTM, GRU and vanilla RNNs. You can adjust the number of layers and units per layer based on the complexity of the dynamics in the data that you are trying to capture. Additionally, you can specify training-related parameters like batch-size, learning rate, optimizer, number of epochs and also early stopping to prevent model overfitting. Once you have defined the parameters you can hit the 'Train!' button to start the training. This will print the final model architecture and start the training. For now, a fixed ratio of 8:1:1 for training, validation, and test datasets is used. Currently, if you want to adjust the ratio, you unfortunately have to dig into the code.
-
-<br/><br/>
-<i>Note: The status messages about the training are written to the console and not passed on to the graphical user interface for now. If you want to observe the training progress, please check the terminal that you used to start the graphical user interface. Also, during the training, the user interface might get unresponsive. Do not worry, just wait until the training is finished.</i>
+After loading the data for training, you can define your model architecture. For now, the tool allows you to use different types of recurrent neural networks including LSTM, Bi-LSTM, GRU and vanilla RNNs. You can adjust the number of layers and units per layer based on the complexity of the dynamics in the data that you are trying to capture. Additionally, you can specify training-related parameters like batch-size, learning rate, optimizer, number of epochs, and also early stopping to prevent model overfitting. Once you have defined the parameters, you can hit the 'Train!' button to start the training. This will print the final model architecture and start the training. For now, a fixed ratio of 8:1:1 for training, validation, and test datasets is used. Currently, if you want to adjust the ratio, you must modify the source code.
+<br/>
+<br/>
+<i>Note: The status messages about the training are written to the console and not passed on to the graphical user interface. If you want to observe the training progress, please check the terminal that you used to start the graphical user interface. Also, during the training, the user interface might become unresponsive. Do not worry, just wait until the training is finished.</i>
 <br/>
 
 <br/>
@@ -114,7 +116,7 @@ After loading the data for training, you can define your model architecture. For
 </p>
 
 <br/>
-Now you can sit back and watch Tensorflow doing its magic to train your surrogate model. The trained surrogate model is saved along with the training data into the `training_data` directory in your project folder.
+Now you can sit back and watch Tensorflow do its magic to train your surrogate model. The trained surrogate model is saved along with the training data into the `training_data` directory in your project folder.
 <br/>
 
 <br/>
