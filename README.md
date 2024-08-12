@@ -27,8 +27,8 @@ The SPARC.RL toolchain consists of a standalone client that is used to obtain ap
 
 
 <p align="center">
-<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_fully_integrated_pipeline_zoomed.png?raw=true" width="800"/><br/>
-  <b>Figure 2.</b> FUlly integrated SPARC.RL reinforcement pipeline on oSPARC.
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_fully_integrated_pipeline_zoomed.png?raw=true" width="600"/><br/>
+  <b>Figure 2.</b> Fully integrated SPARC.RL reinforcement pipeline on oSPARC.
 </p>
 
 
