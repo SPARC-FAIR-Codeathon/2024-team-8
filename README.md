@@ -157,3 +157,6 @@ save_path = ppo_cardiovascular
 <p align="center">
 <img src="./img/osparc_controller_test_on_surrogate_model.png" alt="Testing trained agent on the surrogate model."/><br/>
         <b>Figure 12.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.</p>
+
+## License
+This project is distributed under the terms of the [MIT License](./LICENSE).
