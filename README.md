@@ -10,21 +10,26 @@ The control of medical devices, particularly in applications like neuromodulatio
 
 SPARC.RL is a first proof-of-concept toolchain designed to enable researchers, even those without specific domain knowledge in reinforcement learning, to effortlessly train sophisticated, state-of-the-art reinforcement learning (RL) agents for robust medical device control, by example of closed-loop vagus nerve stimulation for heart rate control. It levarges the power of [Stable Baselines 3](https://stable-baselines3.readthedocs.io/), one of the most prominent and powerful reinforcement learning frameworks available. SPARC.RL allows users to integrate and utilize data from the [SPARC](https://sparc.science/) platform and models from [oSPARC](https://osparc.io/) seamlessly into a reinforcement learning pipeline running on the oSPARC platform that can be applied to arbitrary control problem in the biomedical field.
 
-This toolchain was developed during the [2024 SPARC FAIR Codeathon](https://sparc.science/news-and-events/events/2024-sparc-fair-codeathon) by Max Haberbusch and John Bentley.
+This toolchain and oSPARC pipeline were developed during the [2024 SPARC FAIR Codeathon](https://sparc.science/news-and-events/events/2024-sparc-fair-codeathon) by Max Haberbusch and John Bentley.
 
 <b>The framework resulting from this codeathon can be accessed on [oSPARC](https://osparc.io/).</b>
 
-<i>Note: While this toolchain offers powerful capabilities, please note that it is an initial prototype serving as a proof of concept, and no guarantees are made regarding its bug-freeness and operability with other datasets than those used during development.</i>
+<i>Note: While this project offers powerful capabilities, please note that it is an initial prototype serving as a proof of concept, and no guarantees are made regarding its bug-freeness and operability with other datasets than those used during development.</i>
 
 
 ## Key Features:
-The SPARC.RL toolchain consists of a standalone client that is used to obtain appropriate datasets for reinforcement learning from the [SPARC](https://sparc.science/) platform. This also involves using a large language model to present suggestions to the user on how to use the selected dataset in reinforcement learning. The standalone client helps to preprocess the data, design a proper neural network architecturem and train the model. The result is trained model that is saved to the hard disk. The second component is a [oSPARC](https://osparc.io/) application enables the use of the [Stable Baselines 3](https://stable-baselines3.readthedocs.io/) framework harnessing the computational power of oSPARC. Here the user can load the pre-trained surrogate model and parameterize the reinforcement learning policy and training.<br/><br/>
+The SPARC.RL toolchain consists of a standalone client that is used to obtain appropriate datasets for reinforcement learning from the [SPARC](https://sparc.science/) platform. This also involves using a large language model to present suggestions to the user on how to use the selected dataset in reinforcement learning. The standalone client helps to preprocess the data, design a proper neural network architecture and train the model. The result is trained model that is saved to the hard disk. The second component is a [oSPARC](https://osparc.io/) application enables the use of the [Stable Baselines 3](https://stable-baselines3.readthedocs.io/) framework harnessing the computational power of oSPARC. Here the user can load the pre-trained surrogate model and parameterize the reinforcement learning policy and training.
+
+<p>
+Additionally, SPARC.RL provides a fully integrated reinforcement learning pipeline running on the oSPARC platform.
+<p>
+  
+<br/><br/>
 
 <p align="center">
 <img src="./img/toolchain_overview_wb.png" alt="Overview of the SPARC.RL toolchain." width="800"/><br/>
   <b>Figure 1.</b> Overview of the SPARC.RL toolchain.
 </p>
-
 
 <p align="center">
 <img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_fully_integrated_pipeline_zoomed.png?raw=true" width="600"/><br/>
