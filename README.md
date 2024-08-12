@@ -138,33 +138,33 @@ After the training is completed, you can access the training data (.csv files) a
 </p>
 <br/>
 
-## Reinforcement Learning using SPARC.RL on oSPARC
+## Reinforcement Learning Using SPARC.RL on oSPARC
 
-#### SPARC.RL Train Surrogate Model Node
-Training of the surrogate model can also be done on the oSPARC platform, however without the ability to directly select data from the SPARC platform as previously shown in the standalone client. The training can be run using the SPARC.RL Train Surrogate Model node which tries to approximate the relationship of the inputs and outputs of a dynamical system which are passed to the node using csv files (input.csv and output .csv). The SPARC.RL Train Surrogate Model node saves the trained deep neural network to a .h5 file (model.h5). 
+### Using SPARC.RL Train Surrogate Model Node on oSPARC
+Training of the surrogate model can also be done on the oSPARC platform. However, this approach does not provide the ability to directly select data from the SPARC platform as can be done in the stand-alone client. The training can be run using the SPARC.RL Train Surrogate Model node. This node tries to approximate the underlying dynamical system based on the relationship of the inputs and outputs from the csv files (input.csv and output .csv) passed to the node. The SPARC.RL Train Surrogate Model node saves the trained deep neural network to a .h5 file (model.h5). 
 
-The trained surrogate model then serves an input to the SPARC.RL Train Agent node which is used to train the reinforcement learning agent. The output of this node is a .zip file containing the trained reinforcement learning agent (ppo_cardiovascular.zip) which then can be used as a controller.
+The trained surrogate model then serves as an input to the SPARC.RL Train Agent node, which is used to train the reinforcement learning agent. The output of this node is a .zip file containing the trained reinforcement learning agent (ppo_cardiovascular.zip), which then can be used as a controller.
 
 <br/>
 <p align="center">
 <img src="./img/osparc_nodes_overview.png" alt="Data saved to hard disk."/>
 <br/>
-        <b>Figure 8.</b> Overview of SPARC.RL nodes on oSPARC.
+        <b>Figure 8.</b> Overview of connected SPARC.RL nodes in a Study on oSPARC.
 </p>
 
 <br/>
-Below, in Figure 9, you can see an example output of training a surrogate model using the SPARC.RL Train Surrogate Model node on a synthetic dataset generated with the model of [Haberbusch et al.](https://sparc.science/datasets/335) in which stimulation intensities were varied in a range of 0 mA to 5 mA in steps of 0.1 mA and the respective heart rate changes captured. The model included only a single Long Short-Term Memory (LSTM) layer. The data was split into training, test and validation set in a ratio of 8:1:1.
+Below, in Figure 9, you can see an example output of training a surrogate model using the SPARC.RL Train Surrogate Model node on a synthetic dataset generated with the model from [Haberbusch et al.](https://sparc.science/datasets/335). Here the stimulation intensity was varied from 0 mA to 5 mA in steps of 0.1 mA and the respective heart rate change was calculated. The model included only a single Long Short-Term Memory (LSTM) layer. The data was split into training, test, and validation sets with a ratio of 8:1:1.
 <br/>
 
 <br/>
 <p align="center">
 <img src="./img/osparc_surrogate_training.png" alt="Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node"/>
 <br/>
-        <b>Figure 9.</b> Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node.
+        <b>Figure 9.</b> Surrogate training on oSPARC using SPARC.RL Train Surrogate Model node.
 </p>
 
 <br/>
-The trained surrogate model showed very good performance in reproducing the dynamics of the full in-silico model, as illustrated for one example of the test dataset shown below (Figure 10).
+The trained surrogate model showed very good performance in reproducing the dynamics of the full in silico model, as illustrated for one example from the test dataset shown below (Figure 10).
 <br/>
 
 <br/>
@@ -177,12 +177,12 @@ The trained surrogate model showed very good performance in reproducing the dyna
 <br/>
 After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies. The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
 
-#### SPARC.RL Train Agent Node
+### SPARC.RL Train Agent Node
 
-##### Paramterize Reinforcement Learning
+#### Paramterize Reinforcement Learning
 The SPARC.RL Train Agent node is designed to allow various aspects of the reinforcement learning setup and testing process to be parameterized. Environment settings, such as the choice between discrete or continuous action spaces and the number of parallel environments for training, can be adjusted. The path to the surrogate model and the specific heart rate targets used during testing are also configurable. PPO model parameters, including the policy type, number of training steps, batch size, and total timesteps, can be defined to optimize the training process. Additionally, testing parameters, such as the number of iterations and the interval for changing heart rate targets, can be customized. Finally, the paths for saving and loading trained models are configurable, enabling the script to be flexible and adaptable to different experimental needs.
 
-The reinforcement learning can be adjusted to ones needs by modifying the rl_config.ini file that is used as input to the SPARC.RL Train agent node. As example, the parameters used during the codeathon are printed below:
+The reinforcement learning can be adjusted to ones needs by modifying the rl_config.ini file that is used as input to the SPARC.RL Train agent node. As an example, the parameters used during the codeathon are provided below:
 
 ```
 [Environment]
@@ -219,7 +219,7 @@ An example output of the training to the respective Jupyterlab notebook of the S
 </p>
 
 <br/>
-The same output is visualized in Figure 12 below as a tensorboard depicting the loss function, policy gradient loss, and value loss for the training of the reinforcement learning algorithm over 50,000 total timesteps using the configuration specified in the rl_config.ini file shown above showing good convergence of the learning and suggesting proper controlle rperformance.
+The same output is visualized in Figure 12 below as a tensorboard depicting the loss function, policy gradient loss, and value loss for the training of the reinforcement learning algorithm over 50,000 total timesteps using the configuration specified in the rl_config.ini file shown above. It shows good convergence of the learning, suggesting proper controller performance.
 <br/>
 
 <br/>
@@ -230,18 +230,18 @@ The same output is visualized in Figure 12 below as a tensorboard depicting the 
 </p>
 
 <br/>
-After completion of the training phase, the trained agent was tested on the surrogate model in a heart rate tracking task lasting for 100 seconds, in which the agent had to track several randomly changing setpoint heart rates (changes occured every 50 seconds) from the setpoints specified in the .ini file above (72.0 bpm, 74.0bpm, ..., 82.0bpm). The controller showed a very satisfactory performance in terms of steady state error quantified by the mean squared error between setpoint and measured heart rate of only 1.75 bpm (Figure 13).
+After completion of the training phase, the trained agent was tested on the surrogate model in a heart rate tracking task lasting for 1000 seconds. The agent had to track several randomly changing setpoint heart rates (changes occured every 50 seconds) from the setpoints specified in the .ini file above (72.0 bpm, 74.0 bpm, ..., 82.0 bpm). The controller showed very satisfactory performance in terms of steady state error quantified by the mean squared error between setpoint and measured heart rate of only 1.75 bpm (Figure 13).
 <br/>
 
 <br/>
 <p align="center">
 <img src="./img/osparc_controller_test_on_surrogate_model.png" alt="Testing trained agent on the surrogate model."/>
 <br/>
-        <b>Figure 13.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.
+        <b>Figure 13.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates resulted in a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.
 </p>
 <br/>
 
-#### SPARC.RL Controller
+### SPARC.RL Controller
 The controller can be deployed with the full cardiovascular system model from Haberbusch et al. to form a complete control loop for evualation. It is [available on oSPARC](https://osparc.io/study/fa885632-4b04-11ee-869a-02420a0bd26e).
 
 ## License
