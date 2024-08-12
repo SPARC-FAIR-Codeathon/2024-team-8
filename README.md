@@ -81,7 +81,7 @@ In the first step, select a dataset from the dropdown menu which is automaticall
 <img src="./img/choose_dataset.gif?raw=true" alt="Select dataset from SPARC platform" width="900"/><br/>
   <b>Figure 3.</b> Select dataset from SPARC platform to train surrogate model.
 </p><br/>
-Once you have chosen and downloaded an appropriate dataset, you can select one of the available files containing experimental data using the dropdown menu. The data is automatically filtered for appropriate file types. Currently, only the .hdf5 file format is supported. After you have selected a file, the data is pre-processed to bring it in a proper format for training the model. You can display the pre-processeed data using by hitting the 'Plot Data!' button. If you are satisfied with the preprocessed data, you can move to the next step by hitting the 'Next' button.<br/><br/>
+Once you have chosen and downloaded an appropriate dataset, you can select one of the available files containing experimental data using the dropdown menu. The data is automatically filtered for appropriate file types. Currently, only the .hdf5 file format is supported. After you have selected a file, the data is pre-processed to bring it in a proper format for training the model. You can display the pre-processeed data using by hitting the 'Plot Data!' button. If you are satisfied with the preprocessed data, you can move to the next step by hitting the 'Next' button.<br/>
 <p align="center">
 <img src="./img/chose_file.gif?raw=true" alt="Select data file from dataset and preprocess" width="1000"/><br/>
     <b>Figure 4.</b> Select a file from the dataset for model training and inspect preprocessed data.
