@@ -157,14 +157,19 @@ render_mode = human
 save_path = ppo_cardiovascular
 ```
 
+An example output of the training to the respective Jupyterlab notebook of the SPARC.RL Train Agent node is shown in Figure 11 below.
+
 <p align="center">
 <img src="./img/osparc_train_rl_agent.png" alt="Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC."/><br/>
         <b>Figure 11.</b> Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC.</p>
+
+The same output is visualized in Figure 12 below as a tensorboard depicting the loss function, policy gradient loss, and value loss for the training of the reinforcement learning algorithm over 50,000 total timesteps using the configuration specified in the rl_config.ini file shown above showing good convergence of the learning and suggesting proper controlle rperformance.
 
 <p align="center">
 <img src="./img/sparcrl_agent_training_loss.png" alt="Training loss reinforcement learning."/><br/>
         <b>Figure 12.</b> Loss for reinforcement learning agent training.</p>
 
+After completion of the training phase, the trained agent was tested on the surrogate model in a heart rate tracking task lasting for 100 seconds, in which the agent had to track several randomly changing setpoint heart rates (changes occured every 50 seconds) from the setpoints specified in the .ini file above (72.0 bpm, 74.0bpm, ..., 82.0bpm). The controller showed a very satisfactory performance in terms of steady state error quantified by the mean squared error between setpoint and measured heart rate of only 1.75 bpm (Figure 13).
 
 <p align="center">
 <img src="./img/osparc_controller_test_on_surrogate_model.png" alt="Testing trained agent on the surrogate model."/><br/>
