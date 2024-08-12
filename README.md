@@ -25,6 +25,13 @@ The SPARC.RL toolchain consists of a standalone client that is used to obtain ap
   <b>Figure 1.</b> Overview of the SPARC.RL toolchain.
 </p>
 
+
+<p align="center">
+<img src="https://github.com/SPARC-FAIR-Codeathon/2024-team-8/blob/main/img/osparc_fully_integrated_pipeline_zoomed.png?raw=true" width="800"/><br/>
+  <b>Figure 2.</b> FUlly integrated SPARC.RL reinforcement pipeline on oSPARC.
+</p>
+
+
 ### Dataset and Model Integration:
 
 SPARC.RL supports the selection and use of time-series datasets directly loaded from the SPARC platform using the [SPARC Python client](https://docs.sparc.science/docs/sparc-python-client).
@@ -67,12 +74,12 @@ python sparcrl_surrogate.py
 In the first step, select a dataset from the dropdown menu which is automatically populated with available datasets on the SPARC platform. Currently, the datasets are limited to time series data. Once you have selected a model you can inspect the model metadata like model description, creator, creation date, version, etc. Additionally, a large language model is used to generate suggestions on how to use the dataset for reinforcement learning. Once you have chosen your dataset, you can download and extract the data from SPARC by hitting the 'Get Dataset!' button. You will be asked in what folder to save the data. After that, you can proceed to the next step, to select the file(s) to use for training the surrogate model by hitting the 'Next' button.<br/><br/>
 <p align="center">
 <img src="./img/sprac_rl_select_dataset_from_sparc.png" alt="Select dataset from SPARC platform" width="500"/><br/>
-  <b>Figure 2.</b> Select dataset from SPARC platform to train surrogate model.
+  <b>Figure 3.</b> Select dataset from SPARC platform to train surrogate model.
 </p><br/>
 Once you have chosen and downloaded an appropriate dataset, you can select one of the available files containing experimental data using the dropdown menu. The data is automatically filtered for appropriate file types. Currently, only the .hdf5 file format is supported. After you have selected a file, the data is pre-processed to bring it in a proper format for training the model. You can display the pre-processeed data using by hitting the 'Plot Data!' button. If you are satisfied with the preprocessed data, you can move to the next step by hitting the 'Next' button.<br/><br/>
 <p align="center">
 <img src="./img/sparcrl_inspect_preprocessed_dataset.png" alt="Select data file from dataset and preprocess" width="800"/><br/>
-    <b>Figure 3.</b> Select a file from the dataset for model training and inspect preprocessed data.
+    <b>Figure 4.</b> Select a file from the dataset for model training and inspect preprocessed data.
 </p>
 <br/>
 After loading the data for training, you can define your model architecture. For now, the tool allows you to use different types of recurrent neural networks including LSTM, Bi-LSTM, GRU and vanilla RNNs. You can adjust the number of layers and units per layer based on the complexity of the dynamics in the data that you are trying to capture. Additionally, you can specify training-related parameters like batch-size, learning rate, optimizer, number of epochs and also early stopping to prevent model overfitting. Once you have defined the parameters you can hit the 'Train!' button to start the training. This will print the final model architecture and start the training. For now, a fixed ratio of 8:1:1 for training, validation, and test datasets is used. Currently, if you want to adjust the ratio, you unfortunately have to dig into the code.<br/><br/>
@@ -80,18 +87,18 @@ After loading the data for training, you can define your model architecture. For
 <br/><br/>
 <p align="center">
 <img src="./img/sparcrl_train_model_2.png" alt="Define model architecture and start the training of the surrogate model." height="500"/><br/>
-      <b>Figure 4.</b> Define model architecture and set training parameters.
+      <b>Figure 5.</b> Define model architecture and set training parameters.
 </p><br/>
 Now you can sit back and watch Tensorflow doing its magic to train your surrogate model. The trained surrogate model is saved along with the training data into the `training_data` directory in your project folder.
 <br/><br/>
 <p align="center">
 <img src="./img/training_progress.png" alt="Training of the model" width="800"/><br/>
-        <b>Figure 5.</b> Observe training progress.
+        <b>Figure 6.</b> Observe training progress.
 </p>
 After the training is completed, you can access the training data (.csv files) and the trained model (.h5 file) that was saved to your hard disk from your project directory. 
 <p align="center">
 <img src="./img/sparcrl_data_saved_to_hd.png" alt="Data saved to hard disk." width="500"/><br/>
-        <b>Figure 6.</b> Training data and trained model saved to hard disk.
+        <b>Figure 7.</b> Training data and trained model saved to hard disk.
 </p>
 
 ### Reinforcement Learning using SPARC.RL on oSPARC:
@@ -101,16 +108,16 @@ The trained surrogate model then serves an input to the SPARC.RL Train Agent nod
 
 <p align="center">
 <img src="./img/osparc_nodes_overview.png" alt="Data saved to hard disk."/><br/>
-        <b>Figure 7.</b> Overview of SPARC.RL nodes on oSPARC.
+        <b>Figure 8.</b> Overview of SPARC.RL nodes on oSPARC.
 </p>
 
 <p align="center">
 <img src="./img/osparc_surrogate_training.png" alt="Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node"/><br/>
-        <b>Figure 8.</b> Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node.</p>
+        <b>Figure 9.</b> Surrogate training on oSPARC using SPARC.RL Train Surrogate Model Node.</p>
 
 <p align="center">
 <img src="./img/osparc_surrogate_training_result.png" alt="Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC."/><br/>
-        <b>Figure 9.</b> Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC.</p>
+        <b>Figure 10.</b> Surrogate model predictions compared to ground truth running in SPARC.RL Train Surrogate Model node on oSPARC.</p>
 
 After training the surrogate model, users can parameterize the RL process by selecting from a range of popular RL algorithms such as A2C, DDPG, DQN, HER, PPO, SAC, and TD3, along with their respective policies. The tool supports detailed customization, including choosing the type of action space (discrete or continuous), specifying value ranges, and setting the number of actions for discrete spaces.
 Advanced Training Customization:
@@ -147,16 +154,16 @@ save_path = ppo_cardiovascular
 
 <p align="center">
 <img src="./img/osparc_train_rl_agent.png" alt="Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC."/><br/>
-        <b>Figure 10.</b> Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC.</p>
+        <b>Figure 11.</b> Running Proximal Policy Optimization (PPO) with the previously trained surrogate model in SPARC.RL Train Agent node on oSPARC.</p>
 
 <p align="center">
 <img src="./img/sparcrl_agent_training_loss.png" alt="Training loss reinforcement learning."/><br/>
-        <b>Figure 11.</b> Loss for reinforcement learning agent training.</p>
+        <b>Figure 12.</b> Loss for reinforcement learning agent training.</p>
 
 
 <p align="center">
 <img src="./img/osparc_controller_test_on_surrogate_model.png" alt="Testing trained agent on the surrogate model."/><br/>
-        <b>Figure 12.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.</p>
+        <b>Figure 13.</b> Testing the trained reinforcement learning agent on the surrogate model in SPARC.RL Train Agent node on oSPARC. Running 1000 seconds of heart rate tracking with random setpoint heart rates with a steady state error quantified by mean squared error between setpoint and measured heart rate of only 1.75 bpm.</p>
 
 ## License
 This project is distributed under the terms of the [MIT License](./LICENSE).
